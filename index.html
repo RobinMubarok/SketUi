@@ -2,7 +2,7 @@
 <html lang="id" class="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>beritaunsoed.com — Portal News LPM Sketsa Unsoed</title>
     
     <!-- Tailwind CSS -->
@@ -46,7 +46,6 @@
     </script>
 
     <style>
-
 	@font-face {
       		font-family: 'Grisons';
       		src: url('./Caudex-Bold.ttf') format('truetype');
@@ -60,7 +59,6 @@
       		font-weight: normal;
       		font-style: normal;
     	}	
-
 
         /* Custom Neumorphic Shadows for Light (Pearl White) and Dark (Ink Black) Modes */
         .light .neuro-flat {
@@ -122,7 +120,7 @@
 
         /* Scrollbar customization */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px; /* slightly thinner for mobile */
         }
         ::-webkit-scrollbar-track {
             background: transparent;
@@ -165,21 +163,20 @@
         }
         .nav-item-glow:hover::after {
             width: 60%;
-
         }
     </style>
 </head>
 
-<body class="bg-bauhaus-pearl dark:bg-bauhaus-black text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col relative overflow-x-hidden tracking-wide ">
+<body class="bg-bauhaus-pearl dark:bg-bauhaus-black text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col relative overflow-x-hidden tracking-wide w-full max-w-[100vw]">
 
     <!-- Ambient Bauhaus Intersecting Geometric Background -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30 dark:opacity-20">
         <!-- Primary Red Circle -->
-        <div class="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-bauhaus-red bauhaus-intersection-light filter blur-2xl"></div>
+        <div class="absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-bauhaus-red bauhaus-intersection-light filter blur-2xl"></div>
         <!-- Secondary Yellow Triangle/Square -->
-        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-bauhaus-yellow transform rotate-45 bauhaus-intersection-light filter blur-2xl"></div>
+        <div class="absolute top-1/3 -right-20 w-72 h-72 sm:w-96 sm:h-96 bg-bauhaus-yellow transform rotate-45 bauhaus-intersection-light filter blur-2xl"></div>
         <!-- Bauhaus Blue Circle Accent -->
-        <div class="absolute bottom-10 left-1/3 w-72 h-72 rounded-full bg-bauhaus-blue bauhaus-intersection-light filter blur-3xl"></div>
+        <div class="absolute bottom-10 left-1/3 w-60 h-60 sm:w-72 sm:h-72 rounded-full bg-bauhaus-blue bauhaus-intersection-light filter blur-3xl"></div>
     </div>
 
     <!-- Reading Progress Indicator -->
@@ -189,25 +186,25 @@
 
     <!-- Top Utility & Theme Switcher Bar -->
     <div class="relative z-10 border-b border-slate-300/60 dark:border-slate-800/80 py-2.5 px-4 text-xs">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-3">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-2">
+            <div class="flex items-center space-x-3 w-full sm:w-auto justify-center sm:justify-start">
                 <span class="font-bold text-bauhaus-red flex items-center gap-1.5">
                     <span class="inline-block w-2.5 h-2.5 bg-bauhaus-red rounded-full animate-ping"></span>
                     <i class="far fa-clock"></i> <span id="current-date">Rabu, 9 September 2026</span>
                 </span>
-                <span class="text-slate-400">|</span>
-                <span class="hidden md:inline text-slate-600 dark:text-slate-400 font-semibold">
+                <span class="text-slate-400 hidden sm:inline">|</span>
+                <span class="hidden md:inline text-slate-600 dark:text-slate-400 font-semibold truncate">
                     Lembaga Pers Mahasiswa (LPM) Sketsa Unsoed
                 </span>
             </div>
 
             <!-- Social Links & Dark/Light Mode Neumorphic Button -->
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 w-full sm:w-auto justify-center sm:justify-end">
                 <div class="flex items-center space-x-2">
-                    <a href="https://facebook.com/sketsa.unsoed" target="_blank" class="w-7 h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-facebook-f text-xs"></i></a>
-                    <a href="https://instagram.com/lpmsketsa" target="_blank" class="w-7 h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-instagram text-xs"></i></a>
-                    <a href="https://x.com/lpmsketsa" target="_blank" class="w-7 h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-x-twitter text-xs"></i></a>
-                    <a href="https://youtube.com/@lpmsketsaunsoed" target="_blank" class="w-7 h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-youtube text-xs"></i></a>
+                    <a href="https://facebook.com/sketsa.unsoed" target="_blank" class="w-8 h-8 sm:w-7 sm:h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-facebook-f text-xs"></i></a>
+                    <a href="https://instagram.com/lpmsketsa" target="_blank" class="w-8 h-8 sm:w-7 sm:h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-instagram text-xs"></i></a>
+                    <a href="https://x.com/lpmsketsa" target="_blank" class="w-8 h-8 sm:w-7 sm:h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-x-twitter text-xs"></i></a>
+                    <a href="https://youtube.com/@lpmsketsaunsoed" target="_blank" class="w-8 h-8 sm:w-7 sm:h-7 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-bauhaus-red transition"><i class="fab fa-youtube text-xs"></i></a>
                 </div>
 
                 <!-- Dark/Light Theme Toggle Switch -->
@@ -220,39 +217,39 @@
     </div>
 
     <!-- Main Header / Branding Hero Banner -->
-    <header class="relative z-10 py-6 px-4">
-        <div class="max-w-7xl mx-auto neuro-flat p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+    <header class="relative z-10 py-4 sm:py-6 px-4">
+        <div class="max-w-7xl mx-auto neuro-flat p-5 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden">
             <!-- Intersecting Bauhaus Shapes Decorating Logo -->
             <div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-bauhaus-yellow opacity-40 bauhaus-intersection-light pointer-events-none"></div>
             <div class="absolute right-12 -bottom-10 w-28 h-28 bg-bauhaus-red transform rotate-12 opacity-30 bauhaus-intersection-light pointer-events-none"></div>
 
             <!-- Main Title & Logo -->
-            <div class="text-center md:text-left z-10">
+            <div class="text-center md:text-left z-10 w-full md:w-auto">
                 <a href="#" class="inline-block group">
                     <div class="flex items-center justify-center md:justify-start gap-2">
                         <!-- Bauhaus Geometric Icon Badge -->
-                        <div class="w-10 h-10 bg-bauhaus-red text-white flex items-center justify-center rounded-lg shadow-md font-bauhaus font-extrabold text-2xl transform -rotate-3 group-hover:rotate-0 transition">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 bg-bauhaus-red text-white flex items-center justify-center rounded-lg shadow-md font-bauhaus font-extrabold text-xl sm:text-2xl transform -rotate-3 group-hover:rotate-0 transition">
                             S
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-normal font-bauhaus tracking-tight text-slate-900 dark:text-white">
-                            berita<span class="text-bauhaus-red font-bauhaus">unsoed</span><span class="text-bauhaus-yellow font-bauhaus text-3xl font-bold">.com</span>
+                        <h1 class="text-2xl sm:text-4xl md:text-5xl font-normal font-bauhaus tracking-tight text-slate-900 dark:text-white">
+                            berita<span class="text-bauhaus-red font-bauhaus">unsoed</span><span class="text-bauhaus-yellow font-bauhaus text-2xl sm:text-3xl font-bold">.com</span>
                         </h1>
                     </div>
                 </a>
-                <p class="text-xs uppercase tracking-widest text-slate-600 dark:text-slate-400 font-bold font-grisons mt-2 flex items-center justify-center md:justify-start gap-2">
+                <p class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-600 dark:text-slate-400 font-bold font-grisons mt-2 flex items-center justify-center md:justify-start gap-2 flex-wrap">
                     <span class="inline-block w-2 h-2 bg-bauhaus-yellow rounded-full"></span>
                     Pemandu Wawasan Almamater &bull; Universitas Jenderal Soedirman
                 </p>
             </div>
 
             <!-- Right Announcement Banner with Neumorphic Emboss -->
-            <div class="neuro-pressed p-4 rounded-xl max-w-md w-full flex items-center gap-4 z-10">
-                <div class="w-12 h-12 bg-bauhaus-red text-white rounded-lg flex items-center justify-center text-xl shrink-0 shadow">
+            <div class="neuro-pressed p-3 sm:p-4 rounded-xl max-w-full md:max-w-md w-full flex items-center gap-3 sm:gap-4 z-10">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-bauhaus-red text-white rounded-lg flex items-center justify-center text-lg sm:text-xl shrink-0 shadow">
                     <i class="fas fa-bullhorn"></i>
                 </div>
                 <div class="text-xs">
                     <span class="font-extrabold text-slate-900 dark:text-white block text-sm font-bauhaus">Kawal Transparansi Kampus 2026</span>
-                    <span class="text-slate-600 dark:text-slate-400 font-sans">LPM Sketsa Unsoed membuka kanal aduan dan investigasi independen.</span>
+                    <span class="text-slate-600 dark:text-slate-400 font-sans leading-tight mt-1 block">LPM Sketsa Unsoed membuka kanal aduan dan investigasi independen.</span>
                 </div>
             </div>
         </div>
@@ -301,15 +298,16 @@
             </div>
 
             <!-- Mobile Hamburger Button with Animated Icon Transition -->
-            <button id="mobile-menu-btn" class="lg:hidden neuro-pressed px-3 py-2 rounded-xl text-slate-800 dark:text-slate-200 flex items-center gap-2 hover:border-bauhaus-red transition-all duration-200 active:scale-95" aria-label="Menu Mobile">
+            <button id="mobile-menu-btn" class="lg:hidden neuro-pressed px-4 py-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center gap-2 hover:border-bauhaus-red transition-all duration-200 active:scale-95" aria-label="Menu Mobile">
                 <i id="mobile-menu-icon" class="fas fa-bars text-sm text-bauhaus-red transition-transform duration-300"></i>
-                <span class="text-xs font-extrabold uppercase font-bauhaus tracking-wider">Menu</span>
+                <span class="text-xs font-extrabold uppercase font-bauhaus tracking-wider hidden sm:inline">Menu</span>
             </button>
 
             <!-- Dynamic Expanding Search Input Box -->
             <div class="flex items-center space-x-2">
-                <div class="relative neuro-pressed rounded-full px-3 py-1.5 flex items-center w-36 focus-within:w-56 sm:w-48 sm:focus-within:w-64 transition-all duration-300 border border-transparent focus-within:border-bauhaus-red/50">
-                    <input type="text" id="search-input" placeholder="Cari berita..." class="bg-transparent text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none w-full pr-6 font-sans">
+                <!-- Changed w-36 focus-within:w-56 to w-32 focus-within:w-48 for safer mobile rendering -->
+                <div class="relative neuro-pressed rounded-full px-3 py-1.5 flex items-center w-32 focus-within:w-48 sm:w-48 sm:focus-within:w-64 transition-all duration-300 border border-transparent focus-within:border-bauhaus-red/50">
+                    <input type="text" id="search-input" placeholder="Cari..." class="bg-transparent text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none w-full pr-6 font-sans">
                     <button id="search-btn" class="absolute right-3 text-slate-400 hover:text-bauhaus-red hover:scale-110 active:scale-90 transition-all duration-200" title="Cari">
                         <i class="fas fa-search text-xs"></i>
                     </button>
@@ -318,7 +316,8 @@
         </div>
 
         <!-- Animated Mobile Nav Menu Content -->
-        <div id="mobile-menu" class="hidden lg:hidden mt-2 neuro-flat rounded-2xl p-4 space-y-2 text-xs font-bold uppercase tracking-wider font-bauhaus border border-slate-200 dark:border-slate-800 shadow-xl">
+        <!-- Added max-h-[75vh] overflow-y-auto to allow scrolling on small landscape devices -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-2 neuro-flat rounded-2xl p-4 space-y-2 text-xs font-bold uppercase tracking-wider font-bauhaus border border-slate-200 dark:border-slate-800 shadow-xl max-h-[75vh] overflow-y-auto">
             <a href="#" class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition-all duration-200">
                 <i class="fas fa-home w-4 text-center"></i> Beranda
             </a>
@@ -335,8 +334,8 @@
                 </a>
             </div>
             <a href="#bank-isu" class="flex items-center justify-between p-2.5 rounded-xl text-bauhaus-yellow bg-slate-900 dark:bg-slate-800 font-extrabold">
-                <span class="flex items-center gap-2"><i class="fas fa-folder-open"></i> Bank Isu Sketsa</span>
-                <span class="text-[9px] bg-bauhaus-yellow text-slate-900 px-2 py-0.5 rounded font-mono">NEW</span>
+                <span class="flex items-center gap-2 truncate"><i class="fas fa-folder-open"></i> Bank Isu Sketsa</span>
+                <span class="text-[9px] bg-bauhaus-yellow text-slate-900 px-2 py-0.5 rounded font-mono shrink-0">NEW</span>
             </a>
             <a href="#opini" class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition-all duration-200">
                 <i class="fas fa-pen-nib w-4 text-center"></i> Opini & Sastra
@@ -354,8 +353,8 @@
     </nav>
 
     <!-- Marquee Ticker Section -->
-    <section class="max-w-7xl mx-auto px-4 mb-8 relative z-10">
-        <div class="neuro-flat rounded-2xl p-2.5 flex items-center overflow-hidden">
+    <section class="max-w-7xl mx-auto px-4 mb-8 relative z-10 w-full">
+        <div class="neuro-flat rounded-2xl p-2.5 flex items-center overflow-hidden w-full">
             <!-- Ticker Label -->
             <div class="bg-bauhaus-red text-white font-bauhaus font-extrabold text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-xl shrink-0 mr-3 flex items-center shadow-md">
                 <i class="fas fa-bolt mr-1.5 animate-pulse text-bauhaus-yellow"></i> Terkini
@@ -365,19 +364,19 @@
             <div class="overflow-hidden w-full relative">
                 <div class="animate-marquee whitespace-nowrap flex items-center space-x-8 text-xs font-medium font-sans">
                     <a href="javascript:void(0)" onclick="openNewsModal(0)" class="hover:text-bauhaus-red transition flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-bauhaus-yellow"></span>
+                        <span class="w-2 h-2 rounded-full bg-bauhaus-yellow shrink-0"></span>
                         <span>Aliansi Soedirman Melawan Gelar Aksi Kamisan, Soroti Kasus HAM yang Belum Tuntas</span>
                     </a>
                     <a href="javascript:void(0)" onclick="openNewsModal(1)" class="hover:text-bauhaus-red transition flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-bauhaus-red"></span>
+                        <span class="w-2 h-2 rounded-full bg-bauhaus-red shrink-0"></span>
                         <span>Bongkar Polemik di Balik Riuh PKKMB FIB Unsoed 2026</span>
                     </a>
                     <a href="javascript:void(0)" onclick="openNewsModal(2)" class="hover:text-bauhaus-red transition flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-bauhaus-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-bauhaus-blue shrink-0"></span>
                         <span>Kilas Balik Aksi Audiensi: Bukan Sekadar Tuntutan, Mahasiswa Butuh Aksi Nyata</span>
                     </a>
                     <a href="javascript:void(0)" onclick="openNewsModal(4)" class="hover:text-bauhaus-red transition flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-bauhaus-yellow"></span>
+                        <span class="w-2 h-2 rounded-full bg-bauhaus-yellow shrink-0"></span>
                         <span>Mitra Unsoed Putus Kontrak Pasca-OTT KPK? Ini Jawaban Plt. Rektor</span>
                     </a>
                 </div>
@@ -386,20 +385,20 @@
     </section>
 
     <!-- Main Content Grid -->
-    <main class="max-w-7xl mx-auto px-4 flex-grow relative z-10 space-y-10">
+    <main class="max-w-7xl mx-auto px-4 flex-grow relative z-10 space-y-10 w-full">
 
         <!-- Hero Section: Featured Article + Side News Cards -->
         <section>
             <!-- Section Title Header with Bauhaus Accent -->
             <div class="flex items-center justify-between mb-5 border-b-2 border-bauhaus-red pb-2">
-                <h2 class="text-2xl font-normal font-grisons text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
-                    <span class="w-4 h-4 bg-bauhaus-red inline-block transform rotate-45"></span>
+                <h2 class="text-xl sm:text-2xl font-normal font-grisons text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
+                    <span class="w-3 h-3 sm:w-4 sm:h-4 bg-bauhaus-red inline-block transform rotate-45 shrink-0"></span>
                     Sorotan Berita Utama
                 </h2>
-                <span class="text-xs font-bold text-slate-500 font-bauhaus">LPM SKETSA UNSOED</span>
+                <span class="text-[10px] sm:text-xs font-bold text-slate-500 font-bauhaus hidden sm:inline">LPM SKETSA UNSOED</span>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
                 
                 <!-- Main Featured Headline (7 Columns) -->
                 <div class="lg:col-span-7 group cursor-pointer" onclick="openNewsModal(0)">
@@ -417,7 +416,7 @@
 
                         <!-- Content Text -->
                         <div>
-                            <h3 class="text-2xl sm:text-3xl font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-3">
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-3">
                                 Aliansi Soedirman Melawan Gelar Aksi Kamisan, Soroti Kasus HAM yang Belum Tuntas
                             </h3>
                             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 mb-4 font-serif leading-relaxed">
@@ -425,7 +424,7 @@
                             </p>
                         </div>
 
-                        <div class="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-200 dark:border-slate-800 font-sans">
+                        <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 pt-3 border-t border-slate-200 dark:border-slate-800 font-sans">
                             <span><i class="far fa-calendar-alt text-bauhaus-red mr-1"></i> 4 September 2026</span>
                             <span class="font-bold text-bauhaus-red font-bauhaus group-hover:translate-x-1 transition">Baca Selengkapnya &rarr;</span>
                         </div>
@@ -433,59 +432,60 @@
                 </div>
 
                 <!-- Secondary Headlines (5 Columns) -->
+                <!-- Changed side card images logic to w-24 h-24 on pure mobile, expanding to w-28 h-24 on small-tablet -->
                 <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
                     
                     <!-- Card 2 -->
-                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(1)">
-                        <div class="w-28 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
+                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-3 sm:gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(1)">
+                        <div class="w-24 h-24 sm:w-28 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" 
                                  alt="PKKMB FIB" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <span class="absolute top-1 left-1 w-3 h-3 bg-bauhaus-yellow rounded-full"></span>
                         </div>
-                        <div class="flex flex-col justify-between h-full">
+                        <div class="flex flex-col justify-between h-full w-full">
                             <div>
                                 <span class="text-[10px] font-extrabold text-bauhaus-red uppercase font-bauhaus">Indepth News</span>
-                                <h4 class="text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-2 leading-snug mt-1">
+                                <h4 class="text-sm sm:text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-3 sm:line-clamp-2 leading-snug mt-1">
                                     Bongkar Polemik di Balik Riuh PKKMB FIB Unsoed 2026
                                 </h4>
                             </div>
-                            <span class="text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 1 September 2026</span>
+                            <span class="text-[10px] sm:text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 1 September 2026</span>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(2)">
-                        <div class="w-28 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
+                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-3 sm:gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(2)">
+                        <div class="w-24 h-24 sm:w-28 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
                             <img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=400&q=80" 
                                  alt="Audiensi" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <span class="absolute top-1 left-1 w-3 h-3 bg-bauhaus-red rounded-full"></span>
                         </div>
-                        <div class="flex flex-col justify-between h-full">
+                        <div class="flex flex-col justify-between h-full w-full">
                             <div>
                                 <span class="text-[10px] font-extrabold text-bauhaus-yellow uppercase font-bauhaus">Berita Foto</span>
-                                <h4 class="text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-2 leading-snug mt-1">
+                                <h4 class="text-sm sm:text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-3 sm:line-clamp-2 leading-snug mt-1">
                                     Kilas Balik Aksi Audiensi: Bukan Sekadar Tuntutan, Mahasiswa Butuh Aksi Nyata
                                 </h4>
                             </div>
-                            <span class="text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 29 Agustus 2026</span>
+                            <span class="text-[10px] sm:text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 29 Agustus 2026</span>
                         </div>
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(3)">
-                        <div class="w-28 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
+                    <div class="neuro-flat p-4 rounded-2xl flex items-start gap-3 sm:gap-4 cursor-pointer group hover:scale-[1.02] transition" onclick="openNewsModal(3)">
+                        <div class="w-24 h-24 sm:w-28 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
                             <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400&q=80" 
                                  alt="Diskusi Publik" class="w-full h-full object-cover group-hover:scale-110 transition">
                             <span class="absolute top-1 left-1 w-3 h-3 bg-bauhaus-blue rounded-full"></span>
                         </div>
-                        <div class="flex flex-col justify-between h-full">
+                        <div class="flex flex-col justify-between h-full w-full">
                             <div>
                                 <span class="text-[10px] font-extrabold text-blue-500 uppercase font-bauhaus">Kampus & Reformasi</span>
-                                <h4 class="text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-2 leading-snug mt-1">
+                                <h4 class="text-sm sm:text-base font-normal font-grisons text-slate-900 dark:text-white group-hover:text-bauhaus-red transition line-clamp-3 sm:line-clamp-2 leading-snug mt-1">
                                     Potret Ruang Diskusi Publik: Civitas Academica Mengawal Reformasi Tata Kelola Kampus
                                 </h4>
                             </div>
-                            <span class="text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 29 Agustus 2026</span>
+                            <span class="text-[10px] sm:text-[11px] text-slate-400 mt-2 block font-sans"><i class="far fa-clock mr-1"></i> 29 Agustus 2026</span>
                         </div>
                     </div>
 
@@ -494,46 +494,46 @@
         </section>
 
         <!-- Two-Column Main Layout: Left Main Column (8 cols) & Right Sidebar (4 cols) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
             
             <!-- LEFT COLUMN: Main Kampus & Birokrasi News + e-Paper + Opini -->
-            <div id="straight-news" class="lg:col-span-8 space-y-10">
+            <div id="straight-news" class="lg:col-span-8 space-y-10 w-full">
 
                 <!-- Section: Kabar Utama Kampus -->
                 <section>
                     <div class="flex items-center justify-between mb-5 border-b border-slate-300 dark:border-slate-800 pb-2">
-                        <h3 class="text-lg font-extrabold font-head uppercase text-slate-900 dark:text-white flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-extrabold font-head uppercase text-slate-900 dark:text-white flex items-center gap-2">
                             <i class="fas fa-university text-bauhaus-red"></i>
                             Kabar Utama Kampus & Birokrasi
                         </h3>
-                        <span class="text-xs text-bauhaus-red font-bold font-head cursor-pointer hover:underline">Lihat Semua &rarr;</span>
+                        <span class="text-[10px] sm:text-xs text-bauhaus-red font-bold font-head cursor-pointer hover:underline whitespace-nowrap ml-2">Lihat Semua &rarr;</span>
                     </div>
 
                     <div class="space-y-6">
                         <!-- News Item Card 1 -->
-                        <article class="neuro-flat p-5 rounded-2xl flex flex-col md:flex-row gap-5 cursor-pointer group hover:scale-[1.01] transition" onclick="openNewsModal(4)">
-                            <div class="md:w-5/12 h-48 md:h-auto rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
+                        <article class="neuro-flat p-4 sm:p-5 rounded-2xl flex flex-col md:flex-row gap-4 sm:gap-5 cursor-pointer group hover:scale-[1.01] transition w-full">
+                            <div class="w-full md:w-5/12 h-48 md:h-auto rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
                                 <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" 
                                      alt="OTT KPK Kampus" class="w-full h-full object-cover group-hover:scale-105 transition">
                                 <div class="absolute bottom-2 left-2 bg-bauhaus-yellow text-slate-900 text-[10px] font-extrabold px-2 py-0.5 rounded font-head">
                                     ISU KRUSIAL
                                 </div>
                             </div>
-                            <div class="md:w-7/12 flex flex-col justify-between">
+                            <div class="w-full md:w-7/12 flex flex-col justify-between">
                                 <div>
-                                    <div class="flex items-center space-x-2 text-xs mb-2">
-                                        <span class="text-bauhaus-red font-bold font-head text-[10px] uppercase">Investigasi Kampus</span>
+                                    <div class="flex items-center space-x-2 text-[10px] sm:text-xs mb-2">
+                                        <span class="text-bauhaus-red font-bold font-head uppercase">Investigasi Kampus</span>
                                         <span class="text-slate-400">&bull;</span>
                                         <span class="text-slate-500">28 Agustus 2026</span>
                                     </div>
-                                    <h4 class="text-xl font-extrabold font-head text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-2">
+                                    <h4 class="text-lg sm:text-xl font-extrabold font-head text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-2">
                                         Mitra Unsoed Putus Kontrak Pasca-OTT KPK? Ini Jawaban Plt. Rektor
                                     </h4>
                                     <p class="text-slate-600 dark:text-slate-400 text-xs line-clamp-3 leading-relaxed font-serif">
                                         PURWOKERTO — Isu hangat mengenai pemutusan kerja sama oleh pihak mitra pasca Operasi Tangkap Tangan (OTT) KPK menjadi perbincangan hangat di kalangan mahasiswa. Plt. Rektor Unsoed memberikan penjelasan resmi...
                                     </p>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                                <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
                                     <span><i class="far fa-user text-bauhaus-red mr-1"></i> Tim Redaksi Sketsa</span>
                                     <span class="text-bauhaus-red font-bold font-head group-hover:translate-x-1 transition">Baca Selengkapnya &rarr;</span>
                                 </div>
@@ -541,29 +541,29 @@
                         </article>
 
                         <!-- News Item Card 2 -->
-                        <article class="neuro-flat p-5 rounded-2xl flex flex-col md:flex-row gap-5 cursor-pointer group hover:scale-[1.01] transition" onclick="openNewsModal(5)">
-                            <div class="md:w-5/12 h-48 md:h-auto rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
+                        <article class="neuro-flat p-4 sm:p-5 rounded-2xl flex flex-col md:flex-row gap-4 sm:gap-5 cursor-pointer group hover:scale-[1.01] transition w-full">
+                            <div class="w-full md:w-5/12 h-48 md:h-auto rounded-xl overflow-hidden shrink-0 bg-slate-200 relative">
                                 <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" 
                                      alt="Aksi Mahasiswa Delapan Tuntutan" class="w-full h-full object-cover group-hover:scale-105 transition">
                                 <div class="absolute bottom-2 left-2 bg-bauhaus-red text-white text-[10px] font-extrabold px-2 py-0.5 rounded font-head">
                                     AKSI MAHASISWA
                                 </div>
                             </div>
-                            <div class="md:w-7/12 flex flex-col justify-between">
+                            <div class="w-full md:w-7/12 flex flex-col justify-between">
                                 <div>
-                                    <div class="flex items-center space-x-2 text-xs mb-2">
-                                        <span class="text-bauhaus-red font-bold font-head text-[10px] uppercase">Straight News</span>
+                                    <div class="flex items-center space-x-2 text-[10px] sm:text-xs mb-2">
+                                        <span class="text-bauhaus-red font-bold font-head uppercase">Straight News</span>
                                         <span class="text-slate-400">&bull;</span>
                                         <span class="text-slate-500">25 Agustus 2026</span>
                                     </div>
-                                    <h4 class="text-xl font-extrabold font-head text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-2">
+                                    <h4 class="text-lg sm:text-xl font-extrabold font-head text-slate-900 dark:text-white group-hover:text-bauhaus-red transition leading-snug mb-2">
                                         Tuntut Transparansi Birokrasi, Mahasiswa Unsoed Bawakan Delapan Tuntutan
                                     </h4>
                                     <p class="text-slate-600 dark:text-slate-400 text-xs line-clamp-3 leading-relaxed font-serif">
                                         Ratusan mahasiswa yang tergabung dalam Aliansi Soedirman Melawan mendatangi Gedung Rektorat Unsoed dengan delapan tuntutan transparansi anggaran dan evaluasi tata kelola...
                                     </p>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                                <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
                                     <span><i class="far fa-user text-bauhaus-red mr-1"></i> Redaksi Sketsa</span>
                                     <span class="text-bauhaus-red font-bold font-head group-hover:translate-x-1 transition">Baca Selengkapnya &rarr;</span>
                                 </div>
@@ -573,31 +573,31 @@
                 </section>
 
                 <!-- Section: Bauhaus Intersecting Banner — e-Paper Cetak & Digital -->
-                <section id="cetak" class="neuro-flat rounded-2xl p-6 relative overflow-hidden">
+                <section id="cetak" class="neuro-flat rounded-2xl p-5 sm:p-6 relative overflow-hidden w-full">
                     <!-- Intersecting Bauhaus Graphic Accents -->
-                    <div class="absolute top-0 right-0 w-48 h-48 bg-bauhaus-yellow opacity-30 rounded-full bauhaus-intersection-light pointer-events-none -mr-10 -mt-10"></div>
-                    <div class="absolute bottom-0 left-1/2 w-40 h-40 bg-bauhaus-red opacity-30 transform rotate-45 bauhaus-intersection-light pointer-events-none -mb-10"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-bauhaus-yellow opacity-30 rounded-full bauhaus-intersection-light pointer-events-none -mr-10 -mt-10"></div>
+                    <div class="absolute bottom-0 left-1/2 w-28 h-28 sm:w-40 sm:h-40 bg-bauhaus-red opacity-30 transform rotate-45 bauhaus-intersection-light pointer-events-none -mb-10"></div>
 
                     <div class="relative z-10">
                         <div class="flex items-center justify-between mb-6">
                             <div>
-                                <span class="text-xs font-head font-extrabold uppercase text-bauhaus-red tracking-wider">Penerbitan LPM Sketsa</span>
-                                <h3 class="text-2xl font-black font-head text-slate-900 dark:text-white">Majalah & Produk Cetak Edisi 2026</h3>
+                                <span class="text-[10px] sm:text-xs font-head font-extrabold uppercase text-bauhaus-red tracking-wider">Penerbitan LPM Sketsa</span>
+                                <h3 class="text-xl sm:text-2xl font-black font-head text-slate-900 dark:text-white">Majalah & Produk Cetak Edisi 2026</h3>
                             </div>
-                            <div class="w-10 h-10 rounded-full neuro-pressed flex items-center justify-center text-bauhaus-red">
-                                <i class="fas fa-book-open"></i>
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full neuro-pressed flex items-center justify-center text-bauhaus-red shrink-0">
+                                <i class="fas fa-book-open text-sm sm:text-base"></i>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             <!-- e-Paper Card 1 -->
                             <div class="neuro-pressed p-4 rounded-xl flex flex-col justify-between">
                                 <div>
                                     <span class="text-[10px] bg-bauhaus-red text-white font-extrabold px-2 py-0.5 rounded uppercase font-head">Buletin</span>
                                     <h4 class="font-head font-bold text-sm text-slate-900 dark:text-white mt-2">Edisi Khusus Reformasi Kampus</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Catatan kritis mengenai arah tata kelola birokrasi Unsoed.</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Catatan kritis mengenai arah tata kelola birokrasi Unsoed.</p>
                                 </div>
-                                <button onclick="alert('Mengunduh e-Paper Buletin Sketsa PDF...')" class="mt-4 neuro-flat hover:bg-bauhaus-red hover:text-white transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200">
+                                <button onclick="alert('Mengunduh e-Paper Buletin Sketsa PDF...')" class="mt-4 neuro-flat hover:bg-bauhaus-red hover:text-white transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200 w-full">
                                     <i class="fas fa-file-pdf text-bauhaus-red"></i> Unduh PDF
                                 </button>
                             </div>
@@ -607,9 +607,9 @@
                                 <div>
                                     <span class="text-[10px] bg-bauhaus-yellow text-slate-900 font-extrabold px-2 py-0.5 rounded uppercase font-head">Majalah</span>
                                     <h4 class="font-head font-bold text-sm text-slate-900 dark:text-white mt-2">Majalah Sketsa Ed. 2026</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Laporan investigasi mendalam perihal fasilitas dan UKT.</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Laporan investigasi mendalam perihal fasilitas dan UKT.</p>
                                 </div>
-                                <button onclick="alert('Membuka e-Paper Majalah Sketsa...')" class="mt-4 neuro-flat hover:bg-bauhaus-yellow hover:text-slate-900 transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200">
+                                <button onclick="alert('Membuka e-Paper Majalah Sketsa...')" class="mt-4 neuro-flat hover:bg-bauhaus-yellow hover:text-slate-900 transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200 w-full">
                                     <i class="fas fa-book-reader text-bauhaus-yellow"></i> Baca e-Paper
                                 </button>
                             </div>
@@ -619,9 +619,9 @@
                                 <div>
                                     <span class="text-[10px] bg-blue-600 text-white font-extrabold px-2 py-0.5 rounded uppercase font-head">Infografik</span>
                                     <h4 class="font-head font-bold text-sm text-slate-900 dark:text-white mt-2">Kronologi Isu OTT KPK</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Visualisasi alur fakta perjalanan kasus dan audiensi aksi.</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 font-serif">Visualisasi alur fakta perjalanan kasus dan audiensi aksi.</p>
                                 </div>
-                                <button onclick="alert('Membuka Galeri Infografik...')" class="mt-4 neuro-flat hover:bg-blue-600 hover:text-white transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200">
+                                <button onclick="alert('Membuka Galeri Infografik...')" class="mt-4 neuro-flat hover:bg-blue-600 hover:text-white transition py-2 px-3 rounded-lg text-xs font-head font-bold flex items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200 w-full">
                                     <i class="fas fa-image text-blue-500"></i> Lihat Infografik
                                 </button>
                             </div>
@@ -632,20 +632,20 @@
                 <!-- Section: Opini & Sastra Mahasiswa -->
                 <section id="opini">
                     <div class="flex items-center justify-between mb-5 border-b border-slate-300 dark:border-slate-800 pb-2">
-                        <h3 class="text-lg font-extrabold font-head uppercase text-slate-900 dark:text-white flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-extrabold font-head uppercase text-slate-900 dark:text-white flex items-center gap-2">
                             <i class="fas fa-pen-nib text-bauhaus-yellow"></i>
-                            Opini, Sastra & Karya Mahasiswa
+                            Opini, Sastra & Karya
                         </h3>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div class="neuro-flat p-5 rounded-2xl flex flex-col justify-between hover:scale-[1.01] transition">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                        <div class="neuro-flat p-4 sm:p-5 rounded-2xl flex flex-col justify-between hover:scale-[1.01] transition">
                             <div>
                                 <span class="text-[10px] font-extrabold text-emerald-600 uppercase font-head">Opini Mahasiswa</span>
-                                <h4 class="font-head font-bold text-base text-slate-900 dark:text-white mt-2 hover:text-bauhaus-red cursor-pointer">
+                                <h4 class="font-head font-bold text-base text-slate-900 dark:text-white mt-2 hover:text-bauhaus-red cursor-pointer leading-snug">
                                     "Demokrasi Kampus di Tengah Kebijakan Sentralistis"
                                 </h4>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 font-serif leading-relaxed">
+                                <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 font-serif leading-relaxed">
                                     Catatan kritis mengenai pentingnya ruang partisipasi civitas academica dalam menentukan arah kebijakan Rektorat...
                                 </p>
                             </div>
@@ -654,13 +654,13 @@
                             </span>
                         </div>
 
-                        <div class="neuro-flat p-5 rounded-2xl flex flex-col justify-between hover:scale-[1.01] transition">
+                        <div class="neuro-flat p-4 sm:p-5 rounded-2xl flex flex-col justify-between hover:scale-[1.01] transition">
                             <div>
                                 <span class="text-[10px] font-extrabold text-purple-500 uppercase font-head">Sastra & Puisi</span>
-                                <h4 class="font-head font-bold text-base text-slate-900 dark:text-white mt-2 hover:text-bauhaus-red cursor-pointer">
+                                <h4 class="font-head font-bold text-base text-slate-900 dark:text-white mt-2 hover:text-bauhaus-red cursor-pointer leading-snug">
                                     "Suara dari Koridor Karangwangkal"
                                 </h4>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 font-serif leading-relaxed">
+                                <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 font-serif leading-relaxed">
                                     Berjalan di antara riuh orasi dan spanduk yang terbentang, bayang-bayang keadilan mencari kepastian...
                                 </p>
                             </div>
@@ -674,91 +674,92 @@
             </div>
 
             <!-- RIGHT COLUMN: Sidebar (4 cols) -->
-            <aside class="lg:col-span-4 space-y-6">
+            <aside class="lg:col-span-4 space-y-6 w-full">
 
                 <!-- Widget 1: Skëtcast (Youtube Embed Simulation) -->
-                <div id="sketcast" class="neuro-flat p-5 rounded-2xl">
+                <div id="sketcast" class="neuro-flat p-4 sm:p-5 rounded-2xl w-full">
                     <div class="flex items-center justify-between border-b border-slate-300 dark:border-slate-800 pb-3 mb-4">
-                        <h4 class="font-head font-extrabold text-sm uppercase text-slate-900 dark:text-white flex items-center gap-2">
-                            <i class="fab fa-youtube text-bauhaus-red text-base"></i> Skëtcast Podcast
+                        <h4 class="font-head font-extrabold text-xs sm:text-sm uppercase text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fab fa-youtube text-bauhaus-red text-sm sm:text-base"></i> Skëtcast Podcast
                         </h4>
                         <span class="text-[10px] bg-bauhaus-red text-white font-extrabold px-2 py-0.5 rounded font-head">Eps. 16</span>
                     </div>
 
                     <!-- Embed Canvas container -->
-                    <div class="relative aspect-video rounded-xl overflow-hidden neuro-pressed mb-3">
-                        <iframe class="w-full h-full" 
+                    <div class="relative aspect-video rounded-xl overflow-hidden neuro-pressed mb-3 w-full">
+                        <iframe class="w-full h-full absolute inset-0" 
                                 src="https://www.youtube.com/embed/4HT0-MThow8" 
                                 title="Skëtcast Eps. 16: Independensi Pers Mahasiswa" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen></iframe>
                     </div>
-                    <h5 class="font-head font-bold text-xs text-slate-900 dark:text-white leading-snug">
+                    <h5 class="font-head font-bold text-xs sm:text-sm text-slate-900 dark:text-white leading-snug">
                         Skëtcast #Eps. 16: "Bongkar Dapur Berita Unsoed & Independensi Pers Mahasiswa"
                     </h5>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-serif">
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-serif">
                         Bincang hangat bersama awak redaksi LPM Sketsa mengawal berita kekinian Unsoed.
                     </p>
                 </div>
 
                 <!-- Widget 2: Bank Isu LPM Sketsa -->
-                <div id="bank-isu" class="neuro-flat p-5 rounded-2xl relative overflow-hidden border-2 border-bauhaus-yellow/40">
+                <div id="bank-isu" class="neuro-flat p-4 sm:p-5 rounded-2xl relative overflow-hidden border-2 border-bauhaus-yellow/40 w-full">
                     <!-- Bauhaus Accent Circle -->
                     <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-bauhaus-yellow rounded-full opacity-20 pointer-events-none"></div>
 
                     <div class="flex items-center space-x-2 border-b border-slate-300 dark:border-slate-800 pb-3 mb-3">
-                        <div class="w-8 h-8 rounded-lg neuro-pressed flex items-center justify-center text-bauhaus-yellow">
-                            <i class="fas fa-folder-open"></i>
+                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg neuro-pressed flex items-center justify-center text-bauhaus-yellow">
+                            <i class="fas fa-folder-open text-xs sm:text-sm"></i>
                         </div>
-                        <h4 class="font-head font-extrabold text-sm uppercase text-slate-900 dark:text-white">Bank Isu LPM Sketsa</h4>
+                        <h4 class="font-head font-extrabold text-xs sm:text-sm uppercase text-slate-900 dark:text-white">Bank Isu LPM Sketsa</h4>
                     </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-4 font-serif">
+                    <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mb-4 font-serif">
                         Kumpulan dokumen investigasi, data transkrip, dan berkas audiensi publik.
                     </p>
 
-                    <ul class="space-y-2 text-xs font-head font-bold">
-                        <li class="neuro-pressed p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red" onclick="alert('Membuka Dokumen: Reformasi Tata Kelola Unsoed')">
-                            <span><i class="fas fa-file-alt text-bauhaus-red mr-2"></i> Reformasi Tata Kelola</span>
-                            <span class="text-[9px] bg-bauhaus-red text-white px-2 py-0.5 rounded uppercase">Hot</span>
+                    <ul class="space-y-2 text-xs font-head font-bold w-full">
+                        <!-- Used flex, truncate, shrink-0 for safe mobile text display -->
+                        <li class="neuro-pressed p-2 sm:p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red w-full" onclick="alert('Membuka Dokumen: Reformasi Tata Kelola Unsoed')">
+                            <span class="truncate pr-2"><i class="fas fa-file-alt text-bauhaus-red mr-1 sm:mr-2"></i> Reformasi Tata Kelola</span>
+                            <span class="text-[9px] bg-bauhaus-red text-white px-2 py-0.5 rounded uppercase shrink-0">Hot</span>
                         </li>
-                        <li class="neuro-pressed p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red" onclick="alert('Membuka Dokumen: Evaluasi PKKMB FIB 2026')">
-                            <span><i class="fas fa-file-alt text-bauhaus-yellow mr-2"></i> Evaluasi PKKMB FIB 2026</span>
-                            <span class="text-[9px] bg-bauhaus-yellow text-slate-900 px-2 py-0.5 rounded uppercase">Update</span>
+                        <li class="neuro-pressed p-2 sm:p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red w-full" onclick="alert('Membuka Dokumen: Evaluasi PKKMB FIB 2026')">
+                            <span class="truncate pr-2"><i class="fas fa-file-alt text-bauhaus-yellow mr-1 sm:mr-2"></i> Evaluasi PKKMB FIB 2026</span>
+                            <span class="text-[9px] bg-bauhaus-yellow text-slate-900 px-2 py-0.5 rounded uppercase shrink-0">Update</span>
                         </li>
-                        <li class="neuro-pressed p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red" onclick="alert('Membuka Dokumen: Keadilan & Hak HAM Kampus')">
-                            <span><i class="fas fa-file-alt text-blue-500 mr-2"></i> Keadilan Hak HAM Kampus</span>
-                            <span class="text-[9px] bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded uppercase">Arsip</span>
+                        <li class="neuro-pressed p-2 sm:p-2.5 rounded-xl text-slate-800 dark:text-slate-200 flex items-center justify-between cursor-pointer hover:text-bauhaus-red w-full" onclick="alert('Membuka Dokumen: Keadilan & Hak HAM Kampus')">
+                            <span class="truncate pr-2"><i class="fas fa-file-alt text-blue-500 mr-1 sm:mr-2"></i> Keadilan Hak HAM Kampus</span>
+                            <span class="text-[9px] bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded uppercase shrink-0">Arsip</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Widget 3: Kategori Artikel -->
-                <div class="neuro-flat p-5 rounded-2xl">
-                    <h4 class="font-head font-extrabold text-sm uppercase text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-3 mb-3">
+                <div class="neuro-flat p-4 sm:p-5 rounded-2xl w-full">
+                    <h4 class="font-head font-extrabold text-xs sm:text-sm uppercase text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-3 mb-3">
                         Kategori Artikel
                     </h4>
-                    <ul class="space-y-2 text-xs font-head font-bold">
+                    <ul class="space-y-2 text-[11px] sm:text-xs font-head font-bold w-full">
                         <li>
-                            <a href="#straight-news" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition">
+                            <a href="#straight-news" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition w-full">
                                 <span>BERITA / STRAIGHT NEWS</span>
                                 <span class="text-bauhaus-red font-mono">(42)</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#indepth" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition">
+                            <a href="#indepth" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition w-full">
                                 <span>INDEPTH NEWS</span>
                                 <span class="text-bauhaus-red font-mono">(18)</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#kampus" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition">
+                            <a href="#kampus" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition w-full">
                                 <span>KAMPUS UNSOED</span>
                                 <span class="text-bauhaus-red font-mono">(95)</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#opini" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition">
+                            <a href="#opini" class="neuro-pressed px-3 py-2 rounded-xl flex justify-between items-center hover:text-bauhaus-red transition w-full">
                                 <span>OPINI & SASTRA</span>
                                 <span class="text-bauhaus-red font-mono">(31)</span>
                             </a>
@@ -767,328 +768,270 @@
                 </div>
 
                 <!-- Widget 4: Tag Populer Bauhaus Style -->
-                <div class="neuro-flat p-5 rounded-2xl">
-                    <h4 class="font-head font-extrabold text-sm uppercase text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-3 mb-3">
+                <div class="neuro-flat p-4 sm:p-5 rounded-2xl w-full">
+                    <h4 class="font-head font-extrabold text-xs sm:text-sm uppercase text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-800 pb-3 mb-3">
                         Tag Populer
                     </h4>
-                    <div class="flex flex-wrap gap-2 text-xs font-head font-bold">
-                        <a href="#" class="neuro-pressed px-3 py-1.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition text-slate-700 dark:text-slate-300">#aksikamisan</a>
-                        <a href="#" class="neuro-pressed px-3 py-1.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition text-slate-700 dark:text-slate-300">#ottkpk</a>
-                        <a href="#" class="neuro-pressed px-3 py-1.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition text-slate-700 dark:text-slate-300">#pkkmbfib2026</a>
-                        <a href="#" class="neuro-pressed px-3 py-1.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition text-slate-700 dark:text-slate-300">#aliansisoedirmanmelawan</a>
-                        <a href="#" class="neuro-pressed px-3 py-1.5 rounded-xl hover:bg-bauhaus-red hover:text-white transition text-slate-700 dark:text-slate-300">#transparansibirokrasi</a>
+                    <div class="flex flex-wrap gap-2 text-[10px] sm:text-xs font-bold font-bauhaus">
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-red transition">#PemiluRaya</a>
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-red transition">#AksiKamisan</a>
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-yellow transition">#UKT2026</a>
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-red transition">#FIBUnsoed</a>
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-blue transition">#Rektorat</a>
+                        <a href="#" class="neuro-pressed px-2.5 py-1.5 rounded-lg hover:text-bauhaus-red transition">#Investigasi</a>
                     </div>
-                </div>
-
-                <!-- Widget 5: Support / Social Action Callout -->
-                <div id="dukung" class="neuro-flat p-6 rounded-2xl text-center relative overflow-hidden">
-                    <div class="w-12 h-12 bg-bauhaus-red text-white rounded-2xl flex items-center justify-center text-xl mx-auto mb-3 shadow-lg">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h4 class="font-head font-extrabold text-sm uppercase text-slate-900 dark:text-white">Dukung Pers Mahasiswa</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 mb-4 font-serif leading-relaxed">
-                        Rawat independensi dan keberanian LPM Sketsa Unsoed dalam mengabarkan kebenaran.
-                    </p>
-                    <button onclick="alert('Terima kasih atas dukungan Anda terhadap LPM Sketsa Unsoed!')" class="w-full bg-bauhaus-red hover:bg-red-700 text-white font-head font-extrabold text-xs py-3 rounded-xl uppercase tracking-wider shadow-md transition">
-                        Dukung LPM Sketsa
-                    </button>
                 </div>
 
             </aside>
         </div>
-
     </main>
 
     <!-- Footer Section -->
-    <footer class="mt-16 border-t border-slate-300 dark:border-slate-800 relative z-10 text-xs py-10 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            
-            <!-- Col 1: About -->
-            <div class="space-y-3">
-                <div class="flex items-center gap-2">
-                    <div class="w-7 h-7 bg-bauhaus-red text-white flex items-center justify-center rounded font-head font-bold text-lg">S</div>
-                    <h3 class="text-xl font-black font-head tracking-tight text-slate-900 dark:text-white">
-                        berita<span class="text-bauhaus-red">unsoed</span><span class="text-bauhaus-yellow font-light">.com</span>
-                    </h3>
+    <footer class="mt-12 w-full border-t border-slate-300/50 dark:border-slate-800 bg-bauhaus-pearl dark:bg-[#0a0b0e] relative z-10 pt-10 pb-6 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="col-span-1 sm:col-span-2 md:col-span-1">
+                <h2 class="text-xl sm:text-2xl font-bauhaus font-bold text-slate-900 dark:text-white mb-2">berita<span class="text-bauhaus-red">unsoed</span><span class="text-bauhaus-yellow">.com</span></h2>
+                <p class="text-xs text-slate-500 font-serif mb-4 leading-relaxed">Portal berita independen yang dikelola oleh Lembaga Pers Mahasiswa (LPM) Sketsa Universitas Jenderal Soedirman.</p>
+                <div class="flex gap-2">
+                    <div class="w-3 h-3 bg-bauhaus-red rounded-full"></div>
+                    <div class="w-3 h-3 bg-bauhaus-yellow rounded-full"></div>
+                    <div class="w-3 h-3 bg-bauhaus-blue rounded-full"></div>
                 </div>
-                <p class="text-slate-600 dark:text-slate-400 font-serif leading-relaxed">
-                    Portal berita resmi Lembaga Pers Mahasiswa (LPM) Sketsa Universitas Jenderal Soedirman. Pemandu Wawasan Almamater sejak 1988.
-                </p>
             </div>
-
-            <!-- Col 2: Navigation -->
             <div>
-                <h4 class="text-slate-900 dark:text-white font-head font-extrabold uppercase mb-3 text-xs tracking-wider border-b border-slate-300 dark:border-slate-800 pb-2">Kategori Utama</h4>
-                <ul class="space-y-2 font-head font-medium text-slate-600 dark:text-slate-400">
-                    <li><a href="#straight-news" class="hover:text-bauhaus-red transition">Straight News Kampus</a></li>
-                    <li><a href="#indepth" class="hover:text-bauhaus-red transition">Indepth & Investigasi</a></li>
-                    <li><a href="#opini" class="hover:text-bauhaus-red transition">Opini Civitas Academica</a></li>
-                    <li><a href="#cetak" class="hover:text-bauhaus-red transition">Produk Cetak e-Paper</a></li>
+                <h4 class="font-head font-bold uppercase text-slate-900 dark:text-white mb-4 text-xs">Redaksi</h4>
+                <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Susunan Redaksi</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Pedoman Media Siber</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Kode Etik Jurnalistik</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Kirim Tulisan Opini</a></li>
                 </ul>
             </div>
-
-            <!-- Col 3: Sekretariat -->
             <div>
-                <h4 class="text-slate-900 dark:text-white font-head font-extrabold uppercase mb-3 text-xs tracking-wider border-b border-slate-300 dark:border-slate-800 pb-2">Sekretariat Redaksi</h4>
-                <p class="text-slate-600 dark:text-slate-400 font-serif leading-relaxed">
-                    Gedung Student Center Unsoed Lt. 2<br>
-                    Jl. Dr. Soeparno, Karangwangkal, Purwokerto Utara, Banyumas, Jawa Tengah 53122
-                </p>
-                <p class="mt-2 text-bauhaus-red font-mono font-bold">
-                    <i class="far fa-envelope mr-1"></i> redaksi@beritaunsoed.com
-                </p>
+                <h4 class="font-head font-bold uppercase text-slate-900 dark:text-white mb-4 text-xs">Informasi</h4>
+                <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Kontak & Aduan</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Berlangganan Cetak</a></li>
+                    <li><a href="#" class="hover:text-bauhaus-red transition">Dukung Kami</a></li>
+                </ul>
             </div>
-
-            <!-- Col 4: Info Hak Cipta -->
             <div>
-                <h4 class="text-slate-900 dark:text-white font-head font-extrabold uppercase mb-3 text-xs tracking-wider border-b border-slate-300 dark:border-slate-800 pb-2">Kode Etik & Redaksi</h4>
-                <p class="text-slate-600 dark:text-slate-400 font-serif leading-relaxed">
-                    Seluruh karya jurnalistik yang dipublikasikan berpedoman pada Kode Etik Jurnalistik dan Standar Pers Mahasiswa Indonesia.
+                <h4 class="font-head font-bold uppercase text-slate-900 dark:text-white mb-4 text-xs">Alamat Sekretariat</h4>
+                <p class="text-xs text-slate-500 font-serif leading-relaxed">
+                    Pusat Kegiatan Mahasiswa (PKM) Unsoed<br>
+                    Jl. Dr. Soeparno, Karangwangkal, Purwokerto Utara, Kab. Banyumas, Jawa Tengah 53122
                 </p>
-                <div class="mt-4 pt-3 border-t border-slate-300 dark:border-slate-800 text-[11px] text-slate-500 font-mono">
-                    &copy; 2026 LPM Sketsa Unsoed.
+                <div class="mt-4 flex gap-3 text-sm">
+                    <a href="#" class="text-slate-400 hover:text-bauhaus-red transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-bauhaus-red transition"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-bauhaus-red transition"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-4 border-t border-slate-300 dark:border-slate-800 text-center flex flex-col md:flex-row justify-between items-center gap-2">
+            <p class="text-[10px] text-slate-500 font-sans">&copy; 2026 LPM Sketsa Unsoed. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p class="text-[10px] text-slate-500 font-mono">Designed with Bauhaus Principles.</p>
         </div>
     </footer>
 
-    <!-- Interactive News Reader Modal Component -->
-    <div id="news-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
-        <div class="neuro-flat rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto my-8 border border-slate-300 dark:border-slate-700 shadow-2xl">
-            
-            <!-- Modal Header -->
-            <div class="sticky top-0 bg-bauhaus-pearl dark:bg-bauhaus-black border-b border-slate-300 dark:border-slate-800 px-6 py-4 flex items-center justify-between z-10">
-                <span id="modal-category" class="bg-bauhaus-red text-white text-[10px] font-extrabold font-head uppercase px-3 py-1 rounded-lg">
-                    Kategori Berita
-                </span>
-                
-                <div class="flex items-center space-x-2">
-                    <button onclick="closeNewsModal()" class="w-8 h-8 rounded-full neuro-flat flex items-center justify-center text-slate-700 dark:text-slate-200 font-bold hover:text-bauhaus-red transition">
-                        &times;
-                    </button>
-                </div>
-            </div>
+    <!-- News Modal (Hidden by Default) -->
+    <div id="news-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm bg-black/60 flex items-start sm:items-center justify-center p-4 overflow-y-auto">
+        <div class="neuro-flat w-full max-w-3xl rounded-3xl p-5 sm:p-6 md:p-8 relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto mt-10 sm:mt-0">
+            <!-- Close Button with adjusted tap target for mobile -->
+            <button onclick="closeNewsModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-red-100 dark:bg-red-900/30 text-bauhaus-red rounded-full flex items-center justify-center hover:bg-bauhaus-red hover:text-white transition shadow-sm border border-bauhaus-red/20">
+                <i class="fas fa-times"></i>
+            </button>
 
-            <!-- Modal Content Body -->
-            <div class="p-6 md:p-8 space-y-5">
-                <h2 id="modal-title" class="text-2xl md:text-3xl font-black font-head text-slate-900 dark:text-white leading-tight">
-                    Judul Artikel Berita Unsoed
+            <!-- Dynamic Content Area -->
+            <div id="modal-content" class="mt-4 sm:mt-2">
+                <div class="flex items-center space-x-2 text-[10px] sm:text-xs mb-3 font-bauhaus font-bold uppercase">
+                    <span id="modal-category" class="text-bauhaus-red bg-red-100 dark:bg-red-900/20 px-2 py-1 rounded">Straight News</span>
+                    <span class="text-slate-400">&bull;</span>
+                    <span id="modal-date" class="text-slate-500">Tanggal</span>
+                </div>
+                <h2 id="modal-title" class="text-2xl sm:text-3xl md:text-4xl font-normal font-grisons text-slate-900 dark:text-white leading-tight mb-4">
+                    Judul Berita
                 </h2>
-
-                <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 border-y border-slate-300 dark:border-slate-800 py-3">
-                    <span id="modal-date"><i class="far fa-calendar-alt text-bauhaus-red mr-1"></i> Tanggal Artikel</span>
-                    <span>&bull;</span>
-                    <span><i class="far fa-user text-bauhaus-red mr-1"></i> Redaksi Sketsa</span>
-                    <span>&bull;</span>
-                    <a id="modal-original-link" href="#" target="_blank" class="text-bauhaus-red font-bold font-head hover:underline flex items-center gap-1">
-                        Tautan Asli <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-
-                <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-200 my-4 shadow-inner">
+                
+                <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-200 my-4 sm:my-6 shadow-inner relative group">
                     <img id="modal-image" src="" alt="Gambar Berita" class="w-full h-full object-cover">
-                </div>
-
-                <div id="modal-body" class="font-serif text-slate-800 dark:text-slate-200 text-sm md:text-base leading-relaxed space-y-4">
-                    <!-- Article full text injected here -->
-                </div>
-
-                <!-- Share Action Box -->
-                <div class="pt-6 border-t border-slate-300 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs font-head font-extrabold text-slate-700 dark:text-slate-300">Bagikan Berita Ini:</span>
-                    <div class="flex space-x-2">
-                        <button onclick="copyArticleLink()" class="neuro-flat hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs px-3 py-1.5 rounded-lg font-head font-bold flex items-center gap-1.5">
-                            <i class="fas fa-link text-bauhaus-red"></i> Salin Tautan
-                        </button>
-                        <button onclick="alert('Membuka dialog bagikan WhatsApp...')" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-head font-bold flex items-center gap-1.5">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </button>
+                    <!-- Author/Photo Credit -->
+                    <div class="absolute bottom-2 right-2 bg-black/50 backdrop-blur text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded font-mono">
+                        Foto: LPM Sketsa
                     </div>
+                </div>
+
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-200 dark:border-slate-800 pb-4">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+                        <i class="fas fa-user-edit text-xs"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold font-head text-slate-900 dark:text-white">Tim Redaksi</p>
+                        <p class="text-[10px] text-slate-500 font-sans">LPM Sketsa Unsoed</p>
+                    </div>
+                </div>
+
+                <div id="modal-body" class="prose prose-sm sm:prose dark:prose-invert prose-headings:font-grisons prose-p:font-serif prose-a:text-bauhaus-red max-w-none text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+                    Isi berita akan dimuat di sini...
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript Application Logic -->
+    <!-- Scripts -->
     <script>
-        // Article Database compiled from daftar_berita_unsoed.md
-        const articlesData = [
+        // Data Dummy Berita 
+        const newsData = [
             {
-                id: 1,
-                date: "4 September 2026",
                 title: "Aliansi Soedirman Melawan Gelar Aksi Kamisan, Soroti Kasus HAM yang Belum Tuntas",
                 category: "Straight News",
-                url: "https://beritaunsoed.com/2026/09/04/aksi-kamisan-aliansi-soedirman-melawan-kasus-ham/",
+                date: "4 September 2026",
                 image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Massa mahasiswa yang tergabung dalam Aliansi Soedirman Melawan kembali menggelar Aksi Kamisan di pelataran kampus Universitas Jenderal Soedirman (Unsoed). Aksi damai ini secara konsisten menyuarakan penuntasan berbagai kasus pelanggaran Hak Asasi Manusia (HAM) berat di Indonesia yang belum menemukan titik terang hingga saat ini.</p>
-                    <p>Dengan mengenakan pakaian hitam dan membentangkan payung hitam, para peserta aksi membacakan puisi, orasi kebudayaan, serta pernyataan sikap menuntut negara hadir secara nyata dalam mengusut tuntas pelanggaran HAM masa lalu maupun masa kini.</p>
-                    <p>"Aksi Kamisan bukan sekadar seremoni mingguan, melainkan konsistensi moral mahasiswa Soedirman untuk menolak lupa terhadap ketidakadilan yang menimpa masyarakat," tegas perwakilan koordinator lapangan aksi.</p>
-                `
+                content: "<p><b>PURWOKERTO</b> — Massa mahasiswa yang tergabung dalam Aliansi Soedirman Melawan kembali menggelar Aksi Kamisan di pelataran kampus Unsoed. Mengenakan pakaian serba hitam dan membawa payung hitam yang menjadi simbol perjuangan, mereka menyuarakan tuntutan penuntasan berbagai kasus pelanggaran Hak Asasi Manusia (HAM) baik di tingkat nasional maupun ruang lingkup kampus.</p><p>Koordinator aksi menyampaikan bahwa ruang akademik seharusnya menjadi tempat pertama yang merawat memori kolektif akan keadilan. 'Kami menolak lupa, kampus tidak boleh diam ketika keadilan dibungkam,' tegasnya dalam orasi. Aksi ini diakhiri dengan mimbar bebas yang diisi puisi dan teaterikal dari mahasiswa Fakultas Ilmu Budaya.</p>"
             },
             {
-                id: 2,
-                date: "1 September 2026",
                 title: "Bongkar Polemik di Balik Riuh PKKMB FIB Unsoed 2026",
                 category: "Indepth News",
-                url: "https://beritaunsoed.com/2026/09/01/bongkar-polemik-di-balik-riuh-pkkmb-fib-unsoed-2026/",
+                date: "1 September 2026",
                 image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Pelaksanaan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) di Fakultas Ilmu Budaya (FIB) Unsoed tahun 2026 menyisakan sejumlah catatan kritis dan polemik di internal panitia serta mahasiswa baru.</p>
-                    <p>Hasil investigasi mendalam LPM Sketsa menemukan adanya ketidakselarasan komunikasi antara jajaran birokrasi fakultas dengan panitia mahasiswa terkait alokasi anggaran kegiatan dan penentuan penugasan peserta. Beberapa penugasan dinilai terlalu memberatkan mahasiswa baru secara finansial.</p>
-                    <p>Pihak Dekanat FIB berjanji akan melakukan evaluasi menyeluruh bersama panitia penanggung jawab guna memastikan pelaksanaan kegiatan kemahasiswaan mendatang berjalan lebih humanis dan adil.</p>
-                `
+                content: "<p><b>PURWOKERTO</b> — Pelaksanaan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) tingkat Fakultas Ilmu Budaya (FIB) tahun ini menuai pro dan kontra. Investigasi tim Sketsa menemukan adanya miskomunikasi perihal alokasi dana dan penyediaan fasilitas dasar bagi mahasiswa baru.</p><p>Beberapa panitia mengeluhkan minimnya transparansi dari pihak dekanat. Di sisi lain, mahasiswa baru menganggap beberapa rangkaian acara tidak relevan dengan esensi akademik. Kami merangkum berbagai sudut pandang dari panitia, BEM fakultas, hingga pihak birokrasi dalam laporan mendalam berikut ini.</p>"
             },
             {
-                id: 3,
-                date: "29 Agustus 2026",
                 title: "Kilas Balik Aksi Audiensi: Bukan Sekadar Tuntutan, Mahasiswa Butuh Aksi Nyata",
                 category: "Berita Foto",
-                url: "https://beritaunsoed.com/2026/08/29/kilas-balik-aksi-audiensi-bukan-sekadar-tuntutan-mahasiswa-butuh-aksi-nyata/",
+                date: "29 Agustus 2026",
                 image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Rangkaian aksi audiensi antara perwakilan Kelembagaan Mahasiswa Unsoed dengan pimpinan universitas telah berlangsung berulang kali. Namun, sejauh mana tuntutan mahasiswa tersebut direalisasikan?</p>
-                    <p>Lewat pameran kilas balik berita foto ini, LPM Sketsa merekam dinamika ruang audiensi yang diwarnai perdebatan sengit mengenai fasilitas kampus, transparansi dana UKT, hingga reformasi tata kelola. Mahasiswa menegaskan bahwa mereka membutuhkan langkah konkrit, bukan janji di atas kertas.</p>
-                `
+                content: "<p>Galeri foto ini merekam momen-momen panas selama audiensi terbuka antara pihak Rektorat dengan perwakilan lembaga kemahasiswaan. Ketegangan terlihat saat pembahasan draf tuntutan soal transparansi penentuan golongan UKT mahasiswa jalur mandiri.</p><p>Foto-foto eksklusif ini menampilkan emosi, orasi, hingga raut wajah birokrasi saat menjawab rentetan pertanyaan kritis mahasiswa di depan Gedung Rektorat Unsoed.</p>"
             },
             {
-                id: 4,
-                date: "29 Agustus 2026",
                 title: "Potret Ruang Diskusi Publik: Civitas Academica Mengawal Reformasi Tata Kelola Kampus",
                 category: "Kampus",
-                url: "https://beritaunsoed.com/2026/08/29/diskusi-publik-reformasi-unsoed/",
+                date: "29 Agustus 2026",
                 image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Ratusan mahasiswa, dosen, serta alumni memadati ruang diskusi publik yang digagas bersama untuk merumuskan rekomendasi reformasi tata kelola kampus Universitas Jenderal Soedirman.</p>
-                    <p>Diskusi ini menghadirkan berbagai pakar hukum tata negara dan pengamat pendidikan tinggi. Diskusi menyoroti pentingnya keterbukaan publik, akuntabilitas pengadaan barang/jasa di lingkungan Unsoed, serta penguatan independensi lembaga kemahasiswaan.</p>
-                `
+                content: "<p>Ruang-ruang diskusi publik mulai semarak di berbagai sudut kampus. Dari pelataran FISIP hingga pendopo PKM, civitas academica terus mengawal isu reformasi birokrasi Unsoed. Artikel ini merangkum poin-poin penting dari simposium mahasiswa yang mengundang pengamat hukum tata negara.</p>"
             },
             {
-                id: 5,
-                date: "28 Agustus 2026",
                 title: "Mitra Unsoed Putus Kontrak Pasca-OTT KPK? Ini Jawaban Plt. Rektor",
-                category: "Sorotan Utama",
-                url: "https://beritaunsoed.com/2026/08/28/plt-rektor-unsoed-buka-suara-isu-mitra-putus-kontrak-ott-kpk/",
+                category: "Investigasi",
+                date: "28 Agustus 2026",
                 image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Menanggapi rumor yang beredar mengenai adanya pemutusan kontrak kerja sama oleh mitra strategis pasca penindakan Operasi Tangkap Tangan (OTT) oleh Komisi Pemberantasan Korupsi (KPK), Plt. Rektor Unsoed memberikan keterangan resmi.</p>
-                    <p>Dalam wawancara khusus dengan media, Plt. Rektor menegaskan bahwa sebagian besar program kemitraan akademik dan pembangunan fisik tetap berjalan sesuai kesepakatan tertulis. Evaluasi hanya dilakukan terhadap vendor atau mitra yang terindikasi memiliki masalah hukum demi menjaga integritas institusi Unsoed.</p>
-                `
+                content: "<p><b>PURWOKERTO</b> — Desas-desus mundurnya sejumlah mitra strategis universitas menyusul gejolak pasca Operasi Tangkap Tangan (OTT) KPK menjadi sorotan tajam. Benarkah proyek pembangunan mangkrak?</p><p>Plt. Rektor Unsoed memberikan keterangan eksklusif kepada LPM Sketsa mengenai status kontrak mitra. 'Tidak ada pemutusan sepihak, namun kami melakukan evaluasi total (review) terhadap seluruh dokumen kerja sama untuk memastikan tidak ada celah hukum,' paparnya dalam konferensi pers terbatas siang tadi.</p>"
             },
             {
-                id: 6,
-                date: "25 Agustus 2026",
                 title: "Tuntut Transparansi Birokrasi, Mahasiswa Unsoed Bawakan Delapan Tuntutan",
-                category: "Aksi Mahasiswa",
-                url: "https://beritaunsoed.com/2026/08/25/aksi-mahasiswa-unsoed-tuntut-transparansi-birokrasi-korupsi/",
+                category: "Straight News",
+                date: "25 Agustus 2026",
                 image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-                content: `
-                    <p><strong>PURWOKERTO, beritaunsoed.com</strong> — Aliansi Mahasiswa Unsoed melakukan aksi demonstrasi di depan Gedung Rektorat Unsoed dengan menyuarakan Delapan Tuntutan Utama menyangkut reformasi birokrasi kampus.</p>
-                    <p>Kedelapan tuntutan tersebut mencakup audit transparan anggaran pembangunan gedung baru, keringanan UKT bagi mahasiswa terdampak ekonomi, keterbukaan dokumen publik, jaminan kebebasan berpendapat di kampus, hingga pencegahan tindakan koruptif di semua tingkatan birokrasi.</p>
-                `
+                content: "<p>Ribuan mahasiswa turun memadati area Rektorat dengan membawa Delapan Tuntutan Reformasi (8 TR). Tuntutan tersebut menyoroti masalah fasilitas yang tak kunjung diperbaiki, kejelasan alokasi dana kemahasiswaan, hingga perlindungan korban kekerasan seksual di kampus.</p>"
             }
         ];
 
-        // Light/Dark Theme Switcher Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
+        // Dark/Light Mode Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const themeLabel = document.getElementById('theme-label');
-        const htmlElement = document.documentElement;
+        const html = document.documentElement;
 
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('light')) {
-                htmlElement.classList.remove('light');
-                htmlElement.classList.add('dark');
+        // Check local storage or system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.remove('light');
+            html.classList.add('dark');
+            updateThemeUI('dark');
+        } else {
+            updateThemeUI('light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+                updateThemeUI('light');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeUI('dark');
+            }
+        });
+
+        function updateThemeUI(theme) {
+            if (theme === 'dark') {
                 themeIcon.className = 'fas fa-sun text-bauhaus-yellow';
-                themeLabel.innerText = 'Light Mode';
+                themeLabel.textContent = 'Light Mode';
             } else {
-                htmlElement.classList.remove('dark');
-                htmlElement.classList.add('light');
-                themeIcon.className = 'fas fa-moon text-bauhaus-yellow';
-                themeLabel.innerText = 'Dark Mode';
+                themeIcon.className = 'fas fa-moon text-slate-800';
+                themeLabel.textContent = 'Dark Mode';
             }
-        });
+        }
 
-        // Mobile Menu Toggle with Smooth Dynamic Animation
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+        const menuIcon = document.getElementById('mobile-menu-icon');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('animate-menu-slide');
-                mobileMenuIcon.className = 'fas fa-xmark text-sm text-bauhaus-red transform rotate-90 transition-transform duration-300';
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')){
+                menuIcon.classList.remove('fa-times', 'rotate-90');
+                menuIcon.classList.add('fa-bars');
             } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('animate-menu-slide');
-                mobileMenuIcon.className = 'fas fa-bars text-sm text-bauhaus-red transform rotate-0 transition-transform duration-300';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times', 'rotate-90');
+                mobileMenu.classList.add('animate-menu-slide');
             }
         });
 
-        // Close Mobile Menu when clicking menu link items
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.className = 'fas fa-bars text-sm text-bauhaus-red transform rotate-0 transition-transform duration-300';
-            });
-        });
-
-        // Article Modal Handlers
-        function openNewsModal(index) {
-            const article = articlesData[index];
-            if (!article) return;
-
-            document.getElementById('modal-title').innerText = article.title;
-            document.getElementById('modal-category').innerText = article.category;
-            document.getElementById('modal-date').innerHTML = `<i class="far fa-calendar-alt text-bauhaus-red mr-1"></i> ${article.date}`;
-            document.getElementById('modal-image').src = article.image;
-            document.getElementById('modal-body').innerHTML = article.content;
-            document.getElementById('modal-original-link').href = article.url;
-
-            document.getElementById('news-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeNewsModal() {
-            document.getElementById('news-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function copyArticleLink() {
-            const tempInput = document.createElement('input');
-            document.body.appendChild(tempInput);
-            tempInput.value = window.location.href;
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            alert('Tautan berita berhasil disalin ke clipboard!');
-        }
-
-        // Reading Scroll Progress Handler
+        // Reading Progress Bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            document.getElementById('reading-progress').style.width = scrolled + '%';
+            document.getElementById("reading-progress").style.width = scrolled + "%";
         });
 
-        // Search Interaction
-        const searchInput = document.getElementById('search-input');
-        const searchBtn = document.getElementById('search-btn');
+        // Modal Logic
+        const modal = document.getElementById('news-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        function openNewsModal(index) {
+            const data = newsData[index];
+            if(!data) return;
 
-        function triggerSearch() {
-            const query = searchInput.value.trim();
-            if (query) {
-                alert('Mencari artikel dengan kata kunci: "' + query + '"');
-            }
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-category').textContent = data.category;
+            document.getElementById('modal-date').textContent = data.date;
+            document.getElementById('modal-image').src = data.image;
+            document.getElementById('modal-body').innerHTML = data.content;
+
+            modal.classList.remove('hidden');
+            // Small delay to trigger transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
-        searchBtn.addEventListener('click', triggerSearch);
-        searchInput.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') triggerSearch();
+        function closeNewsModal() {
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeNewsModal();
+            }
         });
     </script>
 </body>
